@@ -1,0 +1,68 @@
+public class lab12{
+  public static int factorial(int x){
+    if(x == 1){
+      return 1;
+    }
+    else{
+      return factorial(x-1)*x;
+    }
+  }
+  
+  public static int fibonacci(int x){
+    if (x == 0){
+      return 0;
+    }
+    else if (x == 1){
+      return 1;
+    }
+    else{
+      return fibonacci(x-1) + fibonacci(x-2);
+    }
+  }
+  
+  public static int binarySearch(int [] arr, int x, int start, int end){
+    int mid = (start+end)/2;
+    
+    if(arr[mid] > x){
+      start = 0;
+      end = mid;
+      return binarySearch(arr, x, start, end);
+    }
+    else if (arr[mid] < x){
+      start = mid;
+      end = arr.length-1;
+      return binarySearch(arr, x, start, end);
+    }
+    else{
+      return mid;
+    }
+  }
+  
+  public static String binaryConversion(int dec){
+    String s = "";
+    if (dec == 0){
+      s = "0";
+    }
+    else if (dec == 1){
+      s = "1";
+    }
+    else{
+      binaryConversion(dec/2);
+      s =  dec%2+ s;   
+    }
+    return s;
+  }
+    
+  
+             
+  
+  public static void main(String[] args){
+//    System.out.println(factorial(5));
+//    System.out.println(fibonacci(9));
+//    int[] arr = {1,2,3,4,5,6,7,8};
+//    System.out.println(binarySearch(arr,2,0,6));
+    System.out.println(binaryConversion(5));
+  }
+}
+    
+    
